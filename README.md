@@ -21,7 +21,10 @@ After running tests, you will get report and log in HTML format. Example files a
 log.html</br>
 
 <a href="http://robotframework.org/RobotDemo/report.html" rel="nofollow">report.html</a></br>
-<a href="https://raw.githubusercontent.com/Zahid-Automate/pythonAutomationRoboProject/master/report.html" rel="nofollow">report.html</a>
+<a href="[https://raw.githubusercontent.com/Zahid-Automate/pythonAutomationRoboProject/master/report.html" rel="nofollow](https://github.com/Zahid-Automate/pythonAutomationRoboProject/blob/master/report.html)">report.html</a>
+
+</br>
+<a href="https://github.com/Zahid-Automate/pythonAutomationRoboProject/blob/master/report.html" rel="nofollow">report.html</a>
 
 
 
