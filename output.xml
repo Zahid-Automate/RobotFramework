@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-31T00:04:28.852178" rpa="false" schemaversion="5">
+<suite id="s1" name="InputBox" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\InputBox.robot">
+<test id="s1-t1" name="TestingInputBox" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-31T00:04:28.958333" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-31T00:04:28.958333" elapsed="2.276100"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.234433" elapsed="0.119788"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-03-31T00:04:31.360381" level="INFO">Page title is 'nopCommerce demo store'.</msg>
+<arg>nopCommerce demo store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.355223" elapsed="0.005158"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-03-31T00:04:31.360381" level="INFO">Clicking link 'link=Log in'.</msg>
+<arg>link=Log in</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.360381" elapsed="0.214201"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-31T00:04:31.575581" level="INFO">${"emailAddress"} = id=Email</msg>
+<var>${"emailAddress"}</var>
+<arg>id=Email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.575581" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-03-31T00:04:31.594662" level="INFO">Element 'id=Email' is displayed.</msg>
+<arg>${"emailAddress"}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.575581" elapsed="0.019081"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${"emailAddress"}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.594662" elapsed="0.015581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-31T00:04:31.610243" level="INFO">Typing text '"test@gmail.com"' into text field 'id=Email'.</msg>
+<arg>${"emailAddress"}</arg>
+<arg>"test@gmail.com"</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.610243" elapsed="0.088732"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T00:04:36.700213" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T00:04:31.699969" elapsed="5.000244"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${"emailAddress"}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-31T00:04:36.702041" elapsed="0.033036"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-31T00:04:41.736433" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-31T00:04:36.735077" elapsed="5.001356"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-31T00:04:41.736953" elapsed="2.125619"/>
+</kw>
+<status status="PASS" start="2024-03-31T00:04:28.957399" elapsed="14.906173"/>
+</test>
+<status status="PASS" start="2024-03-31T00:04:28.853178" elapsed="15.013903"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="InputBox">InputBox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
