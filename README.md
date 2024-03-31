@@ -20,6 +20,9 @@ After running tests, you will get report and log in HTML format. Example files a
 </br>[report.html](https://raw.githubusercontent.com/Zahid-Automate/pythonAutomationRoboProject/master/report.html)</br>
 log.html</br>
 
+[View Report](report.html)
+
+
 <h3>Preconditions</h3>
 
 A precondition for running the tests is having [Robot Framework](https://robotframework.org/) installed. It is most commonly used on [Python](https://www.python.org/) but it works also with Jython (JVM) and IronPython (.NET). Robot Framework [installation instructions](https://github.com/robotframework/robotframework/blob/master/INSTALL.rst) cover installation procedure in detail. People already familiar with installing Python packages and having pip package manager installed, can simply run the following command:
