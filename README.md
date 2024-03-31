@@ -17,7 +17,7 @@ This project contains the below test cases</br>
 <h1>Generated results</h1>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
 
-</br>report.html</br>
+</br>[report.html](https://raw.githubusercontent.com/Zahid-Automate/pythonAutomationRoboProject/master/report.html)</br>
 log.html</br>
 
 <h3>Preconditions</h3>
