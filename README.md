@@ -18,6 +18,8 @@ This project contains the below test cases</br>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
 
 </br>[report.html]()</br>
+<a href="file:///C:/Users/mzahi/Desktop/RadioButton Report.html">link</a>
+
 
 log.html</br>
 
