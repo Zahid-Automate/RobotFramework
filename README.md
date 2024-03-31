@@ -20,7 +20,7 @@ After running tests, you will get report and log in HTML format. Example files a
 </br>[report.html](https://raw.githubusercontent.com/Zahid-Automate/pythonAutomationRoboProject/master/report.html)</br>
 log.html</br>
 
-[View Report](report.html)
+<a href="http://robotframework.org/RobotDemo/report.html" rel="nofollow">report.html</a>
 
 
 <h3>Preconditions</h3>
