@@ -1,95 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-31T02:21:24.812205" rpa="false" schemaversion="5">
-<suite id="s1" name="RadioButton" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\RadioButton.robot">
-<test id="s1-t1" name="Select Radio Button" line="9">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-02T23:40:42.977946" rpa="false" schemaversion="5">
+<suite id="s1" name="ReadingDataFromIndividualJson" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\ReadingDataFromIndividualJson.robot">
+<test id="s1-t1" name="Get FirstNameOfIndividual1" line="12">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-04-02T23:40:43.128281" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<var>${json_data}</var>
+<arg>${json_File}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.127282" elapsed="0.000999"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-04-02T23:40:43.138281" level="INFO">${first_name} = ['Alice']</msg>
+<var>${first_name}</var>
+<arg>${json_data}</arg>
+<arg>$.Individual2[0].firstName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-04-02T23:40:43.129281" elapsed="0.010000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>First Name of Individual1: ${first_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.139281" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-02T23:40:43.127282" elapsed="0.012998"/>
+</test>
+<test id="s1-t2" name="GetPhoneNumbersOfIndividual1" line="17">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-04-02T23:40:43.142282" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<var>${json_data}</var>
+<arg>${json_File}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.142282" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-04-02T23:40:43.143280" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
+<var>${individual_data}</var>
+<arg>${json_data["Individual1"]}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.143280" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Individual1 Data: ${individual_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.143280" elapsed="0.001003"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-02T23:40:43.144283" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
+<var>${phone_numbers}</var>
+<arg>${individual_data}</arg>
+<arg>phoneNumbers</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.144283" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Phone Numbers: ${phone_numbers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.145280" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-02T23:40:43.146279" level="INFO">${iphone_numbers} = []</msg>
+<var>${iphone_numbers}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-02T23:40:43.146279" level="INFO">${type} = iPhone</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}' == 'home'</arg>
+<arg>Append To List</arg>
+<arg>${iphone_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
+<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.001002"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-02T23:40:43.147281" level="INFO">${type} = home</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${iphone_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</kw>
+<arg>'${type}' == 'home'</arg>
+<arg>Append To List</arg>
+<arg>${iphone_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-02T23:40:43.147281" level="INFO">${type} = car</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}' == 'home'</arg>
+<arg>Append To List</arg>
+<arg>${iphone_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.001000"/>
+</kw>
+<var name="${phone_number}">{'number': '0123-4567-8999', 'type': 'car'}</var>
+<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.001000"/>
+</iter>
+<var>${phone_number}</var>
+<value>@{phone_numbers}</value>
+<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.002002"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Phone Numbers of Individual1 with Type iPhone: ${iphone_numbers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-02T23:40:43.148281" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-02T23:40:43.141281" elapsed="0.007999"/>
+</test>
+<test id="s1-t3" name="Enter Value In Google Search" line="30">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:24.966860" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2024-04-02T23:40:43.151456" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-31T02:21:24.966860" elapsed="2.808918"/>
+<status status="PASS" start="2024-04-02T23:40:43.151456" elapsed="2.298384"/>
 </kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-04-02T23:40:45.450840" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<var>${json_data}</var>
+<arg>${json_File}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-04-02T23:40:45.450840" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-04-02T23:40:45.473846" level="INFO">${first_name} = ['Alice']</msg>
+<var>${first_name}</var>
+<arg>${json_data}</arg>
+<arg>$.Individual2[0].firstName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-04-02T23:40:45.450840" elapsed="0.023006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-02T23:40:45.475847" level="INFO">Typing text 'Alice' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${firstName[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-02T23:40:45.474845" elapsed="0.091036"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-02T23:40:47.567650" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-03-31T02:21:27.776776" elapsed="0.000000"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-03-31T02:21:27.777775" elapsed="2.129387"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:29.908187" level="INFO">Clicking link 'xpath://a[normalize-space()='Buttons']'.</msg>
-<arg>xpath://a[normalize-space()='Buttons']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:21:29.907162" elapsed="6.089903"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:35.998232" level="INFO">Clicking link 'id:radio-buttons'.</msg>
-<arg>id:radio-buttons</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:21:35.997065" elapsed="6.231321"/>
-</kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:42.229404" level="INFO">Selecting 'radio-button2' from radio button 'materialExampleRadios'.</msg>
-<arg>materialExampleRadios</arg>
-<arg>radio-button2</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="PASS" start="2024-03-31T02:21:42.229404" elapsed="6.093495"/>
-</kw>
-<kw name="Select Radio Button" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:48.323545" level="INFO">Selecting 'radio-button1' from radio button 'materialExampleRadios'.</msg>
-<arg>materialExampleRadios</arg>
-<arg>radio-button1</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<status status="PASS" start="2024-03-31T02:21:48.323545" elapsed="6.074454"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:21:54.399108" level="INFO">Clicking link 'xpath://a[normalize-space()='Buttons']'.</msg>
-<arg>xpath://a[normalize-space()='Buttons']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:21:54.399108" elapsed="6.079346"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:22:00.480475" level="INFO">Clicking link 'id:checkboxes'.</msg>
-<arg>id:checkboxes</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:22:00.478454" elapsed="6.310456"/>
-</kw>
-<kw name="Select Checkbox" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:22:06.790968" level="INFO">Selecting checkbox 'checkbox1'.</msg>
-<arg>checkbox1</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:22:06.789973" elapsed="8.082898"/>
-</kw>
-<kw name="Select Checkbox" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:22:14.873904" level="INFO">Selecting checkbox 'checkbox2'.</msg>
-<arg>checkbox2</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:22:14.873904" elapsed="8.110982"/>
-</kw>
-<kw name="Unselect Checkbox" owner="SeleniumLibrary">
-<msg time="2024-03-31T02:22:22.985878" level="INFO">Unselecting checkbox 'checkbox1'.</msg>
-<arg>checkbox1</arg>
-<doc>Removes the selection of checkbox identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-31T02:22:22.985878" elapsed="8.082110"/>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-02T23:40:45.565881" elapsed="2.001769"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-03-31T02:22:31.067988" elapsed="4.196961"/>
+<status status="PASS" start="2024-04-02T23:40:47.567650" elapsed="2.065514"/>
 </kw>
-<status status="PASS" start="2024-03-31T02:21:24.965865" elapsed="70.302105"/>
+<status status="PASS" start="2024-04-02T23:40:43.150280" elapsed="6.482884"/>
 </test>
-<status status="PASS" start="2024-03-31T02:21:24.814203" elapsed="70.456841"/>
+<status status="PASS" start="2024-04-02T23:40:42.977946" elapsed="6.656193"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RadioButton">RadioButton</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="ReadingDataFromIndividualJson">ReadingDataFromIndividualJson</stat>
 </suite>
 </statistics>
 <errors>

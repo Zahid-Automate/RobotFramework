@@ -4,14 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b6be176-4a7c-4532-aff9-a2a6a429041b" name="Changes" comment="Included new test cases" />
+    <list default="true" id="5b6be176-4a7c-4532-aff9-a2a6a429041b" name="Changes" comment="Included new test cases for reading data from a json file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Zahid-Automate&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="454f88a3-eac0-4cd6-844f-6eb7ac9d77ce" />
+        <option name="url" value="https://github.com/Zahid-Automate/pythonAutomationRoboProject.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -29,6 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mzahi/PycharmProjects/robotframework-jsonlibrary&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -88,7 +112,39 @@
       <option name="project" value="LOCAL" />
       <updated>1711877684616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Included new test cases">
+      <option name="closed" value="true" />
+      <created>1711877981751</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711877981752</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Included new test cases for dropdown validation">
+      <option name="closed" value="true" />
+      <created>1711928981695</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711928981695</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Included new test cases for RegistrationPage with implicit wait">
+      <option name="closed" value="true" />
+      <created>1712007991029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712007991029</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Included new test cases for reading data from a json file">
+      <option name="closed" value="true" />
+      <created>1712042739806</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712042739806</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,7 +167,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -120,6 +188,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Included new test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included new test cases" />
+    <MESSAGE value="Included new test cases for dropdown validation" />
+    <MESSAGE value="Included new test cases for RegistrationPage with implicit wait" />
+    <MESSAGE value="Included new test cases for reading data from a json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Included new test cases for reading data from a json file" />
   </component>
 </project>

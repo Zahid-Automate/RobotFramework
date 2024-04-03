@@ -1,0 +1,115 @@
+{
+    "Individual1": [
+        {
+            "addresses": {
+                "home": {
+                    "city": "Nara",
+                    "postalCode": "630-0192",
+                    "streetAddress": "naist street"
+                },
+                "mailing": {
+                    "city": "Osaka",
+                    "postalCode": "530-0001",
+                    "streetAddress": "Dotonbori street"
+                },
+                "office": {
+                    "city": "Tokyo",
+                    "postalCode": "100-0001",
+                    "streetAddress": "Shibuya street"
+                }
+            },
+            "age": 26,
+            "bankAccounts": [
+                {
+                    "amount": "503",
+                    "bank": "WesternUnion"
+                },
+                {
+                    "amount": "1320",
+                    "bank": "HSBC"
+                },
+                {
+                    "amount": "-10",
+                    "bank": "GoldenSack"
+                }
+            ],
+            "favoriteColor": [
+                "blue"
+            ],
+            "firstName": "John",
+            "gender": "male",
+            "isMarried": false,
+            "lastName": "doe",
+            "occupation": null,
+            "phoneNumbers": [
+                {
+                    "number": "0123-4567-8888",
+                    "type": "iPhone"
+                },
+                {
+                    "number": "778-456-1010",
+                    "type": "home"
+                },
+                {
+                    "number": "0123-4567-8999",
+                    "type": "car"
+                }
+            ],
+            "siblings": [
+            ]
+        }
+    ],
+    "Individual2": [
+        {
+            "addresses": {
+                "home": {
+                    "city": "Kyoto",
+                    "postalCode": "600-0001",
+                    "streetAddress": "Gion street"
+                },
+                "mailing": {
+                    "city": "Hiroshima",
+                    "postalCode": "730-0001",
+                    "streetAddress": "Atomic street"
+                },
+                "office": {
+                    "city": "Osaka",
+                    "postalCode": "530-0002",
+                    "streetAddress": "Umeda street"
+                }
+            },
+            "age": 30,
+            "bankAccounts": [
+                {
+                    "amount": "700",
+                    "bank": "BankA"
+                },
+                {
+                    "amount": "1500",
+                    "bank": "BankB"
+                }
+            ],
+            "favoriteColor": [
+                "red",
+                "green"
+            ],
+            "firstName": "Alice",
+            "gender": "female",
+            "isMarried": true,
+            "lastName": "Smith",
+            "occupation": "Engineer",
+            "phoneNumbers": [
+                {
+                    "number": "9876-5432-1001",
+                    "type": "mobile"
+                }
+            ],
+            "siblings": [
+                {
+                    "name": "Bob",
+                    "relation": "brother"
+                }
+            ]
+        }
+    ]
+}
