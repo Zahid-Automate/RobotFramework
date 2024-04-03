@@ -13,6 +13,9 @@ This project contains the below test cases</br>
 1. Login into a website</br>
 2. Verifying Input Box</br>
 3. Selecting Radio buttons and Checking/Unchecking of Checkboxes</br>
+4. Selecting Drop Down values</br>
+5. Using Implicit wait keyword set selenium implicit wait for a Registration Page on a website</br>
+6. Reading data from a complex Json file and inputing the same onto a website</br>
 
 <h1>Generated results</h1>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
