@@ -3,8 +3,8 @@ Robot Framework is a generic open source test automation framework. In addition 
 
 Contents:
 
-<h1>Downloading demo package</h1>
-To get the demo, you can either download and extract the latest package from the GitHub or checkout the source code directly. As a result you get RobotDemo directory with several files.
+<h1>Downloading package</h1>
+To get the project, you can either download and extract the latest package from the GitHub or checkout the source code directly. As a result you get pythonAutomationRoboProject directory with several files.
 
 Example test cases, test library used by them, and generated results are available also online. Therefore, you do not need to download the demo if you are not interested in running it yourself.
 
@@ -14,7 +14,7 @@ This project contains the below test cases</br>
 2. Verifying Input Box</br>
 3. Selecting Radio buttons and Checking/Unchecking of Checkboxes</br>
 4. Selecting Drop Down values</br>
-5. Using Implicit wait keyword set selenium implicit wait for a Registration Page on a website</br>
+5. Using Implicit wait keyword **set selenium implicit wait** for a Registration Page on a website</br>
 6. Reading data from a complex Json file and inputing the same onto a website</br>
 
 <h1>Generated results</h1>
