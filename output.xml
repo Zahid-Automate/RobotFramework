@@ -1,199 +1,323 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-02T23:40:42.977946" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-03T00:02:57.622521" rpa="false" schemaversion="5">
 <suite id="s1" name="ReadingDataFromIndividualJson" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\ReadingDataFromIndividualJson.robot">
 <test id="s1-t1" name="Get FirstNameOfIndividual1" line="12">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-02T23:40:43.128281" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<msg time="2024-04-03T00:02:57.783054" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.127282" elapsed="0.000999"/>
+<status status="PASS" start="2024-04-03T00:02:57.782046" elapsed="0.001008"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-02T23:40:43.138281" level="INFO">${first_name} = ['Alice']</msg>
+<msg time="2024-04-03T00:02:57.793038" level="INFO">${first_name} = ['Alice']</msg>
 <var>${first_name}</var>
 <arg>${json_data}</arg>
 <arg>$.Individual2[0].firstName</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-02T23:40:43.129281" elapsed="0.010000"/>
+<status status="PASS" start="2024-04-03T00:02:57.783054" elapsed="0.009984"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>First Name of Individual1: ${first_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.139281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.794052" elapsed="0.000987"/>
 </kw>
-<status status="PASS" start="2024-04-02T23:40:43.127282" elapsed="0.012998"/>
+<status status="PASS" start="2024-04-03T00:02:57.782046" elapsed="0.012993"/>
 </test>
 <test id="s1-t2" name="GetPhoneNumbersOfIndividual1" line="17">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-02T23:40:43.142282" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<msg time="2024-04-03T00:02:57.798039" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.142282" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.798039" elapsed="0.000000"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2024-04-02T23:40:43.143280" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
+<msg time="2024-04-03T00:02:57.799039" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
 <var>${individual_data}</var>
 <arg>${json_data["Individual1"]}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.143280" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.799039" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Individual1 Data: ${individual_data}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.143280" elapsed="0.001003"/>
+<status status="PASS" start="2024-04-03T00:02:57.799039" elapsed="0.000996"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-02T23:40:43.144283" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
+<msg time="2024-04-03T00:02:57.800035" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
 <var>${phone_numbers}</var>
 <arg>${individual_data}</arg>
 <arg>phoneNumbers</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.144283" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.800035" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Phone Numbers: ${phone_numbers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.145280" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.800035" elapsed="0.000999"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-04-02T23:40:43.146279" level="INFO">${iphone_numbers} = []</msg>
+<msg time="2024-04-03T00:02:57.801034" level="INFO">${iphone_numbers} = []</msg>
 <var>${iphone_numbers}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.801034" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-02T23:40:43.146279" level="INFO">${type} = iPhone</msg>
+<msg time="2024-04-03T00:02:57.802040" level="INFO">${type} = iPhone</msg>
 <var>${type}</var>
 <arg>${phone_number}</arg>
 <arg>type</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == 'home'</arg>
-<arg>Append To List</arg>
-<arg>${iphone_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
-<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.001002"/>
-</iter>
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-02T23:40:43.147281" level="INFO">${type} = home</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Append To List" owner="Collections">
 <arg>${iphone_numbers}</arg>
 <arg>${phone_number["number"]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
 </kw>
-<arg>'${type}' == 'home'</arg>
+<arg>'${type}' == 'iPhone'</arg>
 <arg>Append To List</arg>
 <arg>${iphone_numbers}</arg>
 <arg>${phone_number["number"]}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
 </kw>
-<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-02T23:40:43.147281" level="INFO">${type} = car</msg>
+<msg time="2024-04-03T00:02:57.803043" level="INFO">${type} = home</msg>
 <var>${type}</var>
 <arg>${phone_number}</arg>
 <arg>type</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.001003"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == 'home'</arg>
+<arg>'${type}' == 'iPhone'</arg>
 <arg>Append To List</arg>
 <arg>${iphone_numbers}</arg>
 <arg>${phone_number["number"]}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.001000"/>
+<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
+<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.001003"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T00:02:57.803043" level="INFO">${type} = car</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}' == 'iPhone'</arg>
+<arg>Append To List</arg>
+<arg>${iphone_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
 </kw>
 <var name="${phone_number}">{'number': '0123-4567-8999', 'type': 'car'}</var>
-<status status="PASS" start="2024-04-02T23:40:43.147281" elapsed="0.001000"/>
+<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
 </iter>
 <var>${phone_number}</var>
 <value>@{phone_numbers}</value>
-<status status="PASS" start="2024-04-02T23:40:43.146279" elapsed="0.002002"/>
+<status status="PASS" start="2024-04-03T00:02:57.801034" elapsed="0.002009"/>
 </for>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Phone Numbers of Individual1 with Type iPhone: ${iphone_numbers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.148281" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:02:57.804039" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-04-02T23:40:43.141281" elapsed="0.007999"/>
+<status status="PASS" start="2024-04-03T00:02:57.797038" elapsed="0.007001"/>
 </test>
 <test id="s1-t3" name="Enter Value In Google Search" line="30">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-02T23:40:43.151456" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg time="2024-04-03T00:02:57.806038" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-02T23:40:43.151456" elapsed="2.298384"/>
+<status status="PASS" start="2024-04-03T00:02:57.806038" elapsed="2.204850"/>
 </kw>
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-02T23:40:45.450840" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<msg time="2024-04-03T00:03:00.011885" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-02T23:40:45.450840" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-03T00:03:00.010888" elapsed="0.000997"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-02T23:40:45.473846" level="INFO">${first_name} = ['Alice']</msg>
+<msg time="2024-04-03T00:03:00.038947" level="INFO">${first_name} = ['Alice']</msg>
 <var>${first_name}</var>
 <arg>${json_data}</arg>
 <arg>$.Individual2[0].firstName</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-02T23:40:45.450840" elapsed="0.023006"/>
+<status status="PASS" start="2024-04-03T00:03:00.011885" elapsed="0.027062"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T23:40:45.475847" level="INFO">Typing text 'Alice' into text field 'name=q'.</msg>
+<msg time="2024-04-03T00:03:00.040944" level="INFO">Typing text 'Alice' into text field 'name=q'.</msg>
 <arg>name=q</arg>
 <arg>${firstName[0]}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T23:40:45.474845" elapsed="0.091036"/>
+<status status="PASS" start="2024-04-03T00:03:00.039948" elapsed="0.103228"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T23:40:47.567650" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-04-03T00:03:02.144493" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T23:40:45.565881" elapsed="2.001769"/>
+<status status="PASS" start="2024-04-03T00:03:00.144169" elapsed="2.000324"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-02T23:40:47.567650" elapsed="2.065514"/>
+<status status="PASS" start="2024-04-03T00:03:02.144493" elapsed="2.089726"/>
 </kw>
-<status status="PASS" start="2024-04-02T23:40:43.150280" elapsed="6.482884"/>
+<status status="PASS" start="2024-04-03T00:02:57.805038" elapsed="6.430015"/>
 </test>
-<status status="PASS" start="2024-04-02T23:40:42.977946" elapsed="6.656193"/>
+<test id="s1-t4" name="GetPhoneNumbersOfIndividualTest2" line="39">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-04-03T00:03:04.238308" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
+<var>${json_data}</var>
+<arg>${json_File}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.237222" elapsed="0.001086"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-04-03T00:03:04.239260" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
+<var>${individual_data}</var>
+<arg>${json_data["Individual1"]}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.238308" elapsed="0.000952"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T00:03:04.239260" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
+<var>${phone_numbers}</var>
+<arg>${individual_data}</arg>
+<arg>phoneNumbers</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.239260" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Phone Numbers: ${phone_numbers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.240380" elapsed="0.000000"/>
+</kw>
+<kw name="Filter Phone Numbers By Type">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-04-03T00:03:04.241416" level="INFO">${filtered_numbers} = []</msg>
+<var>${filtered_numbers}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T00:03:04.241416" level="INFO">${type} = iPhone</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}' == '${type_to_find}'</arg>
+<arg>Append To List</arg>
+<arg>${filtered_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T00:03:04.242489" level="INFO">${type} = home</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Append To List" owner="Collections">
+<arg>${filtered_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</kw>
+<arg>'${type}' == '${type_to_find}'</arg>
+<arg>Append To List</arg>
+<arg>${filtered_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.001073"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-04-03T00:03:04.242489" level="INFO">${type} = car</msg>
+<var>${type}</var>
+<arg>${phone_number}</arg>
+<arg>type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${type}' == '${type_to_find}'</arg>
+<arg>Append To List</arg>
+<arg>${filtered_numbers}</arg>
+<arg>${phone_number["number"]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</kw>
+<var name="${phone_number}">{'number': '0123-4567-8999', 'type': 'car'}</var>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</iter>
+<var>${phone_number}</var>
+<value>@{phone_numbers}</value>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.001073"/>
+</for>
+<return>
+<value>${filtered_numbers}</value>
+<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
+</return>
+<msg time="2024-04-03T00:03:04.242489" level="INFO">${home_phone_numbers} = ['778-456-1010']</msg>
+<var>${home_phone_numbers}</var>
+<arg>${phone_numbers}</arg>
+<arg>home</arg>
+<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.002069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Phone Numbers of Individual1 with Type Home: ${home_phone_numbers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-03T00:03:04.243485" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-03T00:03:04.237222" elapsed="0.007166"/>
+</test>
+<status status="PASS" start="2024-04-03T00:02:57.623524" elapsed="6.622863"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="ReadingDataFromIndividualJson">ReadingDataFromIndividualJson</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="ReadingDataFromIndividualJson">ReadingDataFromIndividualJson</stat>
 </suite>
 </statistics>
 <errors>
