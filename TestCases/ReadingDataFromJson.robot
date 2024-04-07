@@ -1,6 +1,9 @@
 *** Settings ***
 Library               JSONLibrary
 Library               SeleniumLibrary
+Library               ../DebugLibrary.py
+Suite Teardown         Teardown Actions
+
 
 *** Variables ***
 ${json_File}=         tests/json/example.json
@@ -10,10 +13,14 @@ ${url}=               https://www.google.com
 *** Keywords ***
 Load JSON File
     ${json_data}=    Load JSON From File    ${json_File}
-    [Return]         ${json_data}
+    RETURN        ${json_data}
+
+Teardown Actions
+    Pause On Failure
 
 *** Test Cases ***
 TestCase1
+    [Tags]    ReadJson
     ${json_data}=    Load JSON File
     # Check Single Value
     ${firstName}=    Get Value From Json    ${json_data}    $.firstName
@@ -25,6 +32,7 @@ TestCase1
     Should Be Equal   ${address[0]}    naist street
 
 TestCase2
+    [Tags]    ReadJson
     ${json_data}=    Load JSON File
     # Other Test Case using the same JSON data
     ${age}=          Get Value From Json    ${json_data}    $.age
@@ -32,11 +40,13 @@ TestCase2
     should be equal as integers    ${age[0]}    26
 
 Enter Value In Google Search
+    [Tags]    UI
     Open Browser    ${url}    ${browser}
     ${json_data}=    Load JSON From File    ${json_File}
     log to console    ${json_data}
     ${firstName}=    Get Value From Json    ${json_data}    $.firstName
     ${lastName}=     get value from json    ${json_data}    $.lastName
-    Input Text    name=q    ${firstName[0]} ${lastName[0]}
-    Sleep    2s    # Optional: Wait for demonstration
+    set breakpoint
+    Input Text    name=q   ${firstName} ${lastName[0]}
+    pause for debug
     Close Browser
