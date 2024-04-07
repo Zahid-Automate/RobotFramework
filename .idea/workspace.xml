@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b6be176-4a7c-4532-aff9-a2a6a429041b" name="Changes" comment="Included new test cases for reading data from a complex json file by name individuals.json">
+    <list default="true" id="5b6be176-4a7c-4532-aff9-a2a6a429041b" name="Changes" comment="Included a keyword &quot;Filter Phone Numbers By Type&quot; and Implemented new test case GetPhoneNumbersOfIndividualTest2 to return the phone number based on type value">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/ReadingDataFromIndividualJson.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/ReadingDataFromIndividualJson.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/ReadingDataFromJson.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/ReadingDataFromJson.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
@@ -48,15 +48,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mzahi/PycharmProjects/robotframework-jsonlibrary&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Robot Runner.pythonAutomationRoboProject.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/mzahi/PycharmProjects/robotframework-jsonlibrary",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="pythonAutomationRoboProject" type="robot-runner" factoryName="RobotRunConfigurationFactory" temporary="true">
+      <option name="suitePaths">
+        <list>
+          <option value="$PROJECT_DIR$" />
+        </list>
+      </option>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Robot Runner.pythonAutomationRoboProject" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -153,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712126915809</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Included a keyword &quot;Filter Phone Numbers By Type&quot; and Implemented new test case GetPhoneNumbersOfIndividualTest2 to return the phone number based on type value">
+      <option name="closed" value="true" />
+      <created>1712127970138</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712127970138</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +225,7 @@
     <MESSAGE value="Included new test cases for RegistrationPage with implicit wait" />
     <MESSAGE value="Included new test cases for reading data from a json file" />
     <MESSAGE value="Included new test cases for reading data from a complex json file by name individuals.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included new test cases for reading data from a complex json file by name individuals.json" />
+    <MESSAGE value="Included a keyword &quot;Filter Phone Numbers By Type&quot; and Implemented new test case GetPhoneNumbersOfIndividualTest2 to return the phone number based on type value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Included a keyword &quot;Filter Phone Numbers By Type&quot; and Implemented new test case GetPhoneNumbersOfIndividualTest2 to return the phone number based on type value" />
   </component>
 </project>
