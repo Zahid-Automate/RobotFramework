@@ -1,323 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-03T00:02:57.622521" rpa="false" schemaversion="5">
-<suite id="s1" name="ReadingDataFromIndividualJson" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\ReadingDataFromIndividualJson.robot">
-<test id="s1-t1" name="Get FirstNameOfIndividual1" line="12">
-<kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-03T00:02:57.783054" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
-<var>${json_data}</var>
-<arg>${json_File}</arg>
-<doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.782046" elapsed="0.001008"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-03T00:02:57.793038" level="INFO">${first_name} = ['Alice']</msg>
-<var>${first_name}</var>
-<arg>${json_data}</arg>
-<arg>$.Individual2[0].firstName</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-03T00:02:57.783054" elapsed="0.009984"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>First Name of Individual1: ${first_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.794052" elapsed="0.000987"/>
-</kw>
-<status status="PASS" start="2024-04-03T00:02:57.782046" elapsed="0.012993"/>
-</test>
-<test id="s1-t2" name="GetPhoneNumbersOfIndividual1" line="17">
-<kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-03T00:02:57.798039" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
-<var>${json_data}</var>
-<arg>${json_File}</arg>
-<doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.798039" elapsed="0.000000"/>
-</kw>
-<kw name="Get From List" owner="Collections">
-<msg time="2024-04-03T00:02:57.799039" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
-<var>${individual_data}</var>
-<arg>${json_data["Individual1"]}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.799039" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Individual1 Data: ${individual_data}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.799039" elapsed="0.000996"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:02:57.800035" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
-<var>${phone_numbers}</var>
-<arg>${individual_data}</arg>
-<arg>phoneNumbers</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.800035" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Phone Numbers: ${phone_numbers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.800035" elapsed="0.000999"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2024-04-03T00:02:57.801034" level="INFO">${iphone_numbers} = []</msg>
-<var>${iphone_numbers}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.801034" elapsed="0.000000"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:02:57.802040" level="INFO">${type} = iPhone</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Append To List" owner="Collections">
-<arg>${iphone_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
-</kw>
-<arg>'${type}' == 'iPhone'</arg>
-<arg>Append To List</arg>
-<arg>${iphone_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:02:57.803043" level="INFO">${type} = home</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.001003"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == 'iPhone'</arg>
-<arg>Append To List</arg>
-<arg>${iphone_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
-<status status="PASS" start="2024-04-03T00:02:57.802040" elapsed="0.001003"/>
-</iter>
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:02:57.803043" level="INFO">${type} = car</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == 'iPhone'</arg>
-<arg>Append To List</arg>
-<arg>${iphone_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '0123-4567-8999', 'type': 'car'}</var>
-<status status="PASS" start="2024-04-03T00:02:57.803043" elapsed="0.000000"/>
-</iter>
-<var>${phone_number}</var>
-<value>@{phone_numbers}</value>
-<status status="PASS" start="2024-04-03T00:02:57.801034" elapsed="0.002009"/>
-</for>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Phone Numbers of Individual1 with Type iPhone: ${iphone_numbers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.804039" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-04-03T00:02:57.797038" elapsed="0.007001"/>
-</test>
-<test id="s1-t3" name="Enter Value In Google Search" line="30">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-06T17:31:43.218484" rpa="false" schemaversion="5">
+<suite id="s1" name="Credentials" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\Credentials.robot">
+<kw name="Opening my browser" owner="Resources" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-03T00:02:57.806038" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg time="2024-04-06T17:31:43.325047" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-03T00:02:57.806038" elapsed="2.204850"/>
+<status status="PASS" start="2024-04-06T17:31:43.325047" elapsed="1.943387"/>
 </kw>
-<kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-03T00:03:00.011885" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
-<var>${json_data}</var>
-<arg>${json_File}</arg>
-<doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-03T00:03:00.010888" elapsed="0.000997"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-06T17:31:45.268434" elapsed="0.135499"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-03T00:03:00.038947" level="INFO">${first_name} = ['Alice']</msg>
-<var>${first_name}</var>
-<arg>${json_data}</arg>
-<arg>$.Individual2[0].firstName</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-03T00:03:00.011885" elapsed="0.027062"/>
+<status status="PASS" start="2024-04-06T17:31:43.325047" elapsed="2.078886"/>
 </kw>
+<test id="s1-t1" name="TC1 Invalid UserName and Password" line="8">
+<kw name="Invalid Login">
+<kw name="input username" owner="Resources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-03T00:03:00.040944" level="INFO">Typing text 'Alice' into text field 'name=q'.</msg>
-<arg>name=q</arg>
-<arg>${firstName[0]}</arg>
+<msg time="2024-04-06T17:31:45.406056" level="INFO">Typing text 'abc' into text field 'id:Email'.</msg>
+<arg>id:Email</arg>
+<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-03T00:03:00.039948" elapsed="0.103228"/>
+<status status="PASS" start="2024-04-06T17:31:45.404950" elapsed="0.197894"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-03T00:03:02.144493" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-03T00:03:00.144169" elapsed="2.000324"/>
+<arg>${username}</arg>
+<status status="PASS" start="2024-04-06T17:31:45.404950" elapsed="0.197894"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-03T00:03:02.144493" elapsed="2.089726"/>
+<kw name="input password" owner="Resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:45.603847" level="INFO">Typing text 'xyz' into text field 'id:Password'.</msg>
+<arg>id:Password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-06T17:31:45.603847" elapsed="0.140278"/>
 </kw>
-<status status="PASS" start="2024-04-03T00:02:57.805038" elapsed="6.430015"/>
+<arg>${password}</arg>
+<status status="PASS" start="2024-04-06T17:31:45.602844" elapsed="0.141281"/>
+</kw>
+<kw name="click login button" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:45.744125" level="INFO">Clicking element 'xpath://button[normalize-space()='Log in']'.</msg>
+<arg>xpath://button[normalize-space()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-06T17:31:45.744125" elapsed="0.043094"/>
+</kw>
+<status status="PASS" start="2024-04-06T17:31:45.744125" elapsed="0.043094"/>
+</kw>
+<arg>abc</arg>
+<arg>xyz</arg>
+<status status="PASS" start="2024-04-06T17:31:45.404950" elapsed="0.382269"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:45.788259" level="INFO">Clicking button 'name:continue'.</msg>
+<msg time="2024-04-06T17:31:45.907555" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-04-06T17:31:45.907555" level="FAIL">Button with locator 'name:continue' not found.</msg>
+<arg>name:continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2024-04-06T17:31:45.788259" elapsed="0.121296">Button with locator 'name:continue' not found.</status>
+</kw>
+<tag>sanity</tag>
+<status status="FAIL" start="2024-04-06T17:31:45.403933" elapsed="0.505622">Button with locator 'name:continue' not found.</status>
 </test>
-<test id="s1-t4" name="GetPhoneNumbersOfIndividualTest2" line="39">
-<kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-03T00:03:04.238308" level="INFO">${json_data} = {'Individual1': [{'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori ...</msg>
-<var>${json_data}</var>
-<arg>${json_File}</arg>
-<doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.237222" elapsed="0.001086"/>
+<test id="s1-t2" name="TC2 Valid Login" line="13">
+<kw name="Invalid Login">
+<kw name="input username" owner="Resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:45.912554" level="INFO">Typing text 'admin@yourstore.com' into text field 'id:Email'.</msg>
+<arg>id:Email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-06T17:31:45.912554" elapsed="0.164822"/>
 </kw>
-<kw name="Get From List" owner="Collections">
-<msg time="2024-04-03T00:03:04.239260" level="INFO">${individual_data} = {'addresses': {'home': {'city': 'Nara', 'postalCode': '630-0192', 'streetAddress': 'naist street'}, 'mailing': {'city': 'Osaka', 'postalCode': '530-0001', 'streetAddress': 'Dotonbori street'}, 'office...</msg>
-<var>${individual_data}</var>
-<arg>${json_data["Individual1"]}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.238308" elapsed="0.000952"/>
+<arg>${username}</arg>
+<status status="PASS" start="2024-04-06T17:31:45.912554" elapsed="0.164822"/>
 </kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:03:04.239260" level="INFO">${phone_numbers} = [{'number': '0123-4567-8888', 'type': 'iPhone'}, {'number': '778-456-1010', 'type': 'home'}, {'number': '0123-4567-8999', 'type': 'car'}]</msg>
-<var>${phone_numbers}</var>
-<arg>${individual_data}</arg>
-<arg>phoneNumbers</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.239260" elapsed="0.000000"/>
+<kw name="input password" owner="Resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:46.077376" level="INFO">Typing text 'admin' into text field 'id:Password'.</msg>
+<arg>id:Password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-06T17:31:46.077376" elapsed="0.106759"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Phone Numbers: ${phone_numbers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.240380" elapsed="0.000000"/>
+<arg>${password}</arg>
+<status status="PASS" start="2024-04-06T17:31:46.077376" elapsed="0.106759"/>
 </kw>
-<kw name="Filter Phone Numbers By Type">
-<kw name="Create List" owner="BuiltIn">
-<msg time="2024-04-03T00:03:04.241416" level="INFO">${filtered_numbers} = []</msg>
-<var>${filtered_numbers}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+<kw name="click login button" owner="Resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-06T17:31:46.185133" level="INFO">Clicking element 'xpath://button[normalize-space()='Log in']'.</msg>
+<arg>xpath://button[normalize-space()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-06T17:31:46.184135" elapsed="0.688414"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:03:04.241416" level="INFO">${type} = iPhone</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-06T17:31:46.184135" elapsed="0.689417"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == '${type_to_find}'</arg>
-<arg>Append To List</arg>
-<arg>${filtered_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
+<arg>admin@yourstore.com</arg>
+<arg>admin</arg>
+<status status="PASS" start="2024-04-06T17:31:45.912554" elapsed="0.960998"/>
 </kw>
-<var name="${phone_number}">{'number': '0123-4567-8888', 'type': 'iPhone'}</var>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:03:04.242489" level="INFO">${type} = home</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Append To List" owner="Collections">
-<arg>${filtered_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</kw>
-<arg>'${type}' == '${type_to_find}'</arg>
-<arg>Append To List</arg>
-<arg>${filtered_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '778-456-1010', 'type': 'home'}</var>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.001073"/>
-</iter>
-<iter>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-04-03T00:03:04.242489" level="INFO">${type} = car</msg>
-<var>${type}</var>
-<arg>${phone_number}</arg>
-<arg>type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${type}' == '${type_to_find}'</arg>
-<arg>Append To List</arg>
-<arg>${filtered_numbers}</arg>
-<arg>${phone_number["number"]}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</kw>
-<var name="${phone_number}">{'number': '0123-4567-8999', 'type': 'car'}</var>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</iter>
-<var>${phone_number}</var>
-<value>@{phone_numbers}</value>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.001073"/>
-</for>
-<return>
-<value>${filtered_numbers}</value>
-<status status="PASS" start="2024-04-03T00:03:04.242489" elapsed="0.000000"/>
-</return>
-<msg time="2024-04-03T00:03:04.242489" level="INFO">${home_phone_numbers} = ['778-456-1010']</msg>
-<var>${home_phone_numbers}</var>
-<arg>${phone_numbers}</arg>
-<arg>home</arg>
-<status status="PASS" start="2024-04-03T00:03:04.241416" elapsed="0.002069"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Phone Numbers of Individual1 with Type Home: ${home_phone_numbers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-03T00:03:04.243485" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-04-03T00:03:04.237222" elapsed="0.007166"/>
+<tag>regression</tag>
+<status status="PASS" start="2024-04-06T17:31:45.911554" elapsed="0.962999"/>
 </test>
-<status status="PASS" start="2024-04-03T00:02:57.623524" elapsed="6.622863"/>
+<kw name="Closing my browser" owner="Resources" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-04-06T17:31:46.877550" elapsed="6.222074"/>
+</kw>
+<status status="PASS" start="2024-04-06T17:31:46.877550" elapsed="6.222074"/>
+</kw>
+<status status="FAIL" start="2024-04-06T17:31:43.219483" elapsed="9.880141"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="0" fail="1" skip="0">sanity</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="ReadingDataFromIndividualJson">ReadingDataFromIndividualJson</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Credentials">Credentials</stat>
 </suite>
 </statistics>
 <errors>
