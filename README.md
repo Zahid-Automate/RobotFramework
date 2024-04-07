@@ -15,6 +15,9 @@ This project contains the below test cases</br>
 3. Selecting Radio buttons and Checking/Unchecking of Checkboxes</br>
 4. Selecting Drop Down values</br>
 5. Using Implicit wait keyword **set selenium implicit wait** for a Registration Page on a website</br>
+  &ensp; Command to run only test cases with Tag regression &ensp; <strong>robot --include=regression .\TestCases\CredentialTest.robot</strong></br>
+  &ensp; Command to exclude test cases with Tag regression &ensp; <strong>robot -e regression .\TestCases\Credentials.robot</strong></br>
+   &ensp; Command to run test cases with both Tags i.e sanity and regression  &ensp; <strong>robot -i sanity -i regression .\TestCases\Credentials.robot</strong></br>
 6. Reading data from a complex Json file and inputing the same onto a website</br>
 
 <h1>Generated results</h1>
