@@ -15,10 +15,54 @@ This project contains the below test cases</br>
 3. Selecting Radio buttons and Checking/Unchecking of Checkboxes</br>
 4. Selecting Drop Down values</br>
 5. Using Implicit wait keyword **set selenium implicit wait** for a Registration Page on a website</br>
-  &ensp; Command to run only test cases with Tag regression &ensp; <strong>robot --include=regression .\TestCases\CredentialTest.robot</strong></br>
-  &ensp; Command to exclude test cases with Tag regression &ensp; <strong>robot -e regression .\TestCases\Credentials.robot</strong></br>
-   &ensp; Command to run test cases with both Tags i.e sanity and regression  &ensp; <strong>robot -i sanity -i regression .\TestCases\Credentials.robot</strong></br>
-6. Reading data from a complex Json file and inputing the same onto a website</br>
+6. Command to run only test cases with Tag regression </br>
+  
+  ```cmd 
+  robot --include=regression .\TestCases\CredentialTest.robot
+  ```
+  &ensp; Command to exclude test cases with Tag regression &ensp; </br>
+
+  ```cmd 
+  robot -e regression .\TestCases\Credentials.robot
+  ```
+  &ensp; Command to run test cases with both Tags i.e sanity and regression </br> 
+  ```cmd 
+  robot -i sanity -i regression .\TestCases\Credentials.robot
+  ```
+6. Reading data from a complex Json file and passing the same onto a website</br>
+
+<h1>Python based debugging in Robot Framework</h1>
+
+  Import the DebugLibrary.py file present in this project root folder into your test case</br>
+   Use Suite Tear down keyword and a keyword <strong>Teardown Actions</strong> as shown below</br>
+    &ensp;<img width="377" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/22d145a1-e7d0-4932-9a15-e13f11519cb8">
+    &ensp;<img width="448" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/8c3a3a36-3822-4b9a-b28a-3d2f26f650c2"></br>
+
+  Make sure to include the <strong>set breakpoint</strong> in your test case to activate the Python Debugger (Pdb)</br>
+  <img width="548" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/5aa5fa91-a3c6-4c1f-9b5a-97a3e29d0789">
+
+  Use the below command in the terminal, to run the test cases in Debug Mode</br>
+  ```cmd
+  $Env:ROBOT_DEBUG = 'TRUE'; robot  .\TestCases\ReadingDataFromJson.robot
+  ```
+Set the value of the variable to the desired value at run time 
+  ```cmd
+ BuiltIn().set_local_variable("{firstName}", "Superman") 
+
+ ```
+In order to get the value of the variables during run time use below command in Pdb
+  ```cmd
+ BuiltIn().get_variable_value("${firstName}")
+ ```
+Screen-shot of how the value will look like after runtime modification of the variable
+  <img width="779" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/3d65a153-0257-4169-818a-d1f15ad6dd7d">
+
+&ensp;<img width="787" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/43497dcd-2eb3-42aa-aadf-42651d260217">
+
+When <strong>pause for debug</strong> keyword is used , we get to see the below pop-up, where the execution gets stopped </br>
+<img width="228" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/8a732ad6-c549-46bd-bac9-6bb71462e84c">
+
+
 
 <h1>Generated results</h1>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
