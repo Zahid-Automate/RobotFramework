@@ -4,7 +4,7 @@ Robot Framework is a generic open source test automation framework. In addition 
 Contents:
 
 <h1>Downloading package</h1>
-To get the project, you can either download and extract the latest package from the GitHub or checkout the source code directly. As a result you get pythonAutomationRoboProject directory with several files.
+To get the project, you can either download and extract the latest package from the GitHub or checkout the source code directly. As a result you get **RobotFramework** directory with several files.
 
 Example test cases, test library used by a robo project, and generated results are available also online. Therefore, you do not need to download the project if you are not interested in running it yourself.
 
