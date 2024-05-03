@@ -62,7 +62,13 @@ Screen-shot of how the value will look like after runtime modification of the va
 When <strong>pause for debug</strong> keyword is used , we get to see the below pop-up, where the execution gets stopped </br>
 <img width="228" alt="image" src="https://github.com/Zahid-Automate/pythonAutomationRoboProject/assets/45691238/8a732ad6-c549-46bd-bac9-6bb71462e84c">
 
+<h1>Printing the console logs to a txt file</h1> <br>
 
+```
+robot .\TestCases\Credentials.robot > results/console-output.txt
+```
+
+ The above will create a txt log file which has all the contents of **Log to Console** key word present in your test case into a results directly
 
 <h1>Generated results</h1>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
