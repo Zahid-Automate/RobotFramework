@@ -1,187 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-06T23:31:13.362378" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-04T15:21:02.201128" rpa="false" schemaversion="5">
 <suite id="s1" name="ReadingDataFromJson" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\ReadingDataFromJson.robot">
 <test id="s1-t1" name="TestCase1" line="22">
 <kw name="Load JSON File">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:13.542811" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<msg time="2024-05-04T15:21:02.724251" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.541762" elapsed="0.001049"/>
+<status status="PASS" start="2024-05-04T15:21:02.723252" elapsed="0.000999"/>
 </kw>
 <return>
 <value>${json_data}</value>
-<status status="PASS" start="2024-04-06T23:31:13.542811" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.724251" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-06T23:31:13.542811" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<msg time="2024-05-04T15:21:02.724251" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
 <var>${json_data}</var>
-<status status="PASS" start="2024-04-06T23:31:13.541762" elapsed="0.001049"/>
+<status status="PASS" start="2024-05-04T15:21:02.722252" elapsed="0.001999"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:13.552815" level="INFO">${firstName} = ['John']</msg>
+<msg time="2024-05-04T15:21:02.742788" level="INFO">${firstName} = ['John']</msg>
 <var>${firstName}</var>
 <arg>${json_data}</arg>
 <arg>$.firstName</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-06T23:31:13.542811" elapsed="0.010004"/>
+<status status="PASS" start="2024-05-04T15:21:02.725250" elapsed="0.017538"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${firstName[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.553813" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.742788" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${firstName[0]}</arg>
 <arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.554742" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.743788" elapsed="0.000000"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:13.569957" level="INFO">${address} = ['naist street']</msg>
+<msg time="2024-05-04T15:21:02.769126" level="INFO">${address} = ['naist street']</msg>
 <var>${address}</var>
 <arg>${json_data}</arg>
 <arg>$.address.streetAddress</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-06T23:31:13.554742" elapsed="0.015215"/>
+<status status="PASS" start="2024-05-04T15:21:02.744789" elapsed="0.024337"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${address[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.570989" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.770023" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${address[0]}</arg>
 <arg>naist street</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.571868" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.771023" elapsed="0.000000"/>
 </kw>
 <tag>ReadJson</tag>
-<status status="PASS" start="2024-04-06T23:31:13.541762" elapsed="0.030106"/>
+<status status="PASS" start="2024-05-04T15:21:02.721249" elapsed="0.049774"/>
 </test>
 <test id="s1-t2" name="TestCase2" line="34">
 <kw name="Load JSON File">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:13.574521" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<msg time="2024-05-04T15:21:02.774025" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.573411" elapsed="0.001110"/>
+<status status="PASS" start="2024-05-04T15:21:02.773027" elapsed="0.000998"/>
 </kw>
 <return>
 <value>${json_data}</value>
-<status status="PASS" start="2024-04-06T23:31:13.574521" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:02.774025" elapsed="0.000000"/>
 </return>
-<msg time="2024-04-06T23:31:13.574521" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<msg time="2024-05-04T15:21:02.774025" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
 <var>${json_data}</var>
-<status status="PASS" start="2024-04-06T23:31:13.573411" elapsed="0.001110"/>
+<status status="PASS" start="2024-05-04T15:21:02.772024" elapsed="0.002001"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:13.581521" level="INFO">${age} = [26]</msg>
+<msg time="2024-05-04T15:21:02.786804" level="INFO">${age} = [26]</msg>
 <var>${age}</var>
 <arg>${json_data}</arg>
 <arg>$.age</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-06T23:31:13.574521" elapsed="0.007000"/>
+<status status="PASS" start="2024-05-04T15:21:02.775023" elapsed="0.011781"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${age[0]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.582513" elapsed="0.000906"/>
+<status status="PASS" start="2024-05-04T15:21:02.787803" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2024-04-06T23:31:13.584453" level="INFO">Argument types are:
+<msg time="2024-05-04T15:21:02.788803" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${age[0]}</arg>
 <arg>26</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.583419" elapsed="0.001034"/>
+<status status="PASS" start="2024-05-04T15:21:02.788803" elapsed="0.000506"/>
 </kw>
 <tag>ReadJson</tag>
-<status status="PASS" start="2024-04-06T23:31:13.573411" elapsed="0.011042"/>
+<status status="PASS" start="2024-05-04T15:21:02.772024" elapsed="0.017285"/>
 </test>
 <test id="s1-t3" name="Enter Value In Google Search" line="42">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-06T23:31:13.586456" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg time="2024-05-04T15:21:02.791323" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg time="2024-05-04T15:21:03.963151" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\mzahi\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.63); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-06T23:31:13.586456" elapsed="3.013950"/>
+<status status="PASS" start="2024-05-04T15:21:02.790316" elapsed="3.332434"/>
 </kw>
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:16.602405" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<msg time="2024-05-04T15:21:06.123751" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
 <var>${json_data}</var>
 <arg>${json_File}</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2024-04-06T23:31:16.601417" elapsed="0.000988"/>
+<status status="PASS" start="2024-05-04T15:21:06.122750" elapsed="0.001001"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${json_data}</arg>
+<msg time="2024-05-04T15:21:06.124750" level="FAIL">Variable '${json_da' was not closed properly.</msg>
+<arg>${json_da</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-04-06T23:31:16.602405" elapsed="0.001001"/>
+<status status="FAIL" start="2024-05-04T15:21:06.124750" elapsed="0.000000">Variable '${json_da' was not closed properly.</status>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:16.612408" level="INFO">${firstName} = ['John']</msg>
 <var>${firstName}</var>
 <arg>${json_data}</arg>
 <arg>$.firstName</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-06T23:31:16.603406" elapsed="0.009002"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.125748" elapsed="0.000000"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-04-06T23:31:16.621405" level="INFO">${lastName} = ['doe']</msg>
 <var>${lastName}</var>
 <arg>${json_data}</arg>
 <arg>$.lastName</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-04-06T23:31:16.613406" elapsed="0.007999"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.125748" elapsed="0.000000"/>
 </kw>
 <kw name="Set Breakpoint" owner="DebugLibrary">
-<status status="PASS" start="2024-04-06T23:31:16.622406" elapsed="252.054419"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.126748" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-06T23:35:28.677826" level="INFO">Typing text '['John'] doe' into text field 'name=q'.</msg>
 <arg>name=q</arg>
 <arg>${firstName} ${lastName[0]}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-06T23:35:28.676825" elapsed="0.114754"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.126748" elapsed="0.000000"/>
 </kw>
 <kw name="Pause For Debug" owner="DebugLibrary">
-<kw name="Pause Execution" owner="Dialogs">
-<arg>Paused execution for debugging, click OK to continue</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" start="2024-04-06T23:35:28.806743" elapsed="365.696271"/>
-</kw>
-<status status="PASS" start="2024-04-06T23:35:28.792578" elapsed="365.710436"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.127751" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-04-06T23:41:34.503014" elapsed="2.195508"/>
+<status status="NOT RUN" start="2024-05-04T15:21:06.127751" elapsed="0.000000"/>
 </kw>
+<tag>Firm</tag>
+<tag>Reporting</tag>
 <tag>UI</tag>
-<status status="PASS" start="2024-04-06T23:31:13.585465" elapsed="623.113407"/>
+<status status="FAIL" start="2024-05-04T15:21:02.790316" elapsed="3.338434">Variable '${json_da' was not closed properly.</status>
 </test>
 <kw name="Teardown Actions" type="TEARDOWN">
 <kw name="Pause On Failure" owner="DebugLibrary">
-<status status="PASS" start="2024-04-06T23:41:36.700988" elapsed="0.000000"/>
+<kw name="Pause Execution" owner="Dialogs">
+<arg>Paused due to task failure, click OK to continue teardown</arg>
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" start="2024-05-04T15:21:06.275028" elapsed="4.953157"/>
 </kw>
-<status status="PASS" start="2024-04-06T23:41:36.700988" elapsed="0.000000"/>
+<status status="PASS" start="2024-05-04T15:21:06.129773" elapsed="5.098412"/>
 </kw>
-<status status="PASS" start="2024-04-06T23:31:13.363339" elapsed="623.337649"/>
+<status status="PASS" start="2024-05-04T15:21:06.129773" elapsed="5.099414"/>
+</kw>
+<status status="FAIL" start="2024-05-04T15:21:02.202126" elapsed="9.027061"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">Firm</stat>
 <stat pass="2" fail="0" skip="0">ReadJson</stat>
-<stat pass="1" fail="0" skip="0">UI</stat>
+<stat pass="0" fail="1" skip="0">Reporting</stat>
+<stat pass="0" fail="1" skip="0">UI</stat>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="ReadingDataFromJson">ReadingDataFromJson</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="ReadingDataFromJson">ReadingDataFromJson</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-05-04T15:21:03.963151" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\mzahi\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.63); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

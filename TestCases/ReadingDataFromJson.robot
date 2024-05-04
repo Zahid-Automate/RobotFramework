@@ -40,7 +40,7 @@ TestCase2
     should be equal as integers    ${age[0]}    26
 
 Enter Value In Google Search
-    [Tags]    UI
+    [Tags]    UI    Firm    Reporting
     Open Browser    ${url}    ${browser}
     ${json_data}=    Load JSON From File    ${json_File}
     log to console    ${json_data}

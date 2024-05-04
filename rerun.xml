@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-04T15:24:34.042481" rpa="false" schemaversion="5">
+<suite id="s1" name="ReadingDataFromJson" source="C:\Users\mzahi\PycharmProjects\pythonAutomationRoboProject\TestCases\ReadingDataFromJson.robot">
+<test id="s1-t1" name="Enter Value In Google Search" line="42">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-04T15:24:34.309319" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<msg time="2024-05-04T15:24:34.944573" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\mzahi\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.63); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-04T15:24:34.309319" elapsed="2.888817"/>
+</kw>
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-05-04T15:24:37.201103" level="INFO">${json_data} = {'firstName': 'John', 'lastName': 'doe', 'age': 26, 'gender': 'male', 'favoriteColor': ['blue'], 'isMarried': False, 'address': {'streetAddress': 'naist street', 'city': 'Nara', 'postalCode': '630-019...</msg>
+<var>${json_data}</var>
+<arg>${json_File}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-05-04T15:24:37.199091" elapsed="0.002012"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${json_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-04T15:24:37.203101" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-05-04T15:24:37.234874" level="INFO">${firstName} = ['John']</msg>
+<var>${firstName}</var>
+<arg>${json_data}</arg>
+<arg>$.firstName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-05-04T15:24:37.204100" elapsed="0.030774"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-05-04T15:24:37.263852" level="INFO">${lastName} = ['doe']</msg>
+<var>${lastName}</var>
+<arg>${json_data}</arg>
+<arg>$.lastName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-05-04T15:24:37.234874" elapsed="0.028978"/>
+</kw>
+<kw name="Set Breakpoint" owner="DebugLibrary">
+<status status="PASS" start="2024-05-04T15:24:37.263852" elapsed="38.977726"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-04T15:25:16.244582" level="INFO">Typing text '['John'] doe' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${firstName} ${lastName[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-04T15:25:16.242665" elapsed="0.229466"/>
+</kw>
+<kw name="Pause For Debug" owner="DebugLibrary">
+<kw name="Pause Execution" owner="Dialogs">
+<arg>Paused execution for debugging, click OK to continue</arg>
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" start="2024-05-04T15:25:16.496175" elapsed="13.913930"/>
+</kw>
+<status status="PASS" start="2024-05-04T15:25:16.473131" elapsed="13.936974"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-04T15:25:30.411105" elapsed="2.162186"/>
+</kw>
+<tag>Firm</tag>
+<tag>Reporting</tag>
+<tag>UI</tag>
+<status status="PASS" start="2024-05-04T15:24:34.308054" elapsed="58.266240"/>
+</test>
+<kw name="Teardown Actions" type="TEARDOWN">
+<kw name="Pause On Failure" owner="DebugLibrary">
+<status status="PASS" start="2024-05-04T15:25:32.576290" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-04T15:25:32.576290" elapsed="0.001514"/>
+</kw>
+<status status="PASS" start="2024-05-04T15:24:34.044478" elapsed="58.533326"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Firm</stat>
+<stat pass="1" fail="0" skip="0">Reporting</stat>
+<stat pass="1" fail="0" skip="0">UI</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ReadingDataFromJson">ReadingDataFromJson</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-04T15:24:34.944573" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\mzahi\AppData\Local\Programs\Python\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.63); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
