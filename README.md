@@ -70,6 +70,21 @@ robot .\TestCases\Credentials.robot > results/console-output.txt
 
  The above will create a txt log file which has all the contents of **Log to Console** key word present in your test case into a results directly
 
+<h1>Re-run the failed test cases and Merge the rerun results with the Previously failed test result</h1> <br>
+
+```
+robot --output original.xml tests                          # first execute all tests
+```
+```
+robot --rerunfailed original.xml --output rerun.xml tests  # then re-execute failing
+```
+```
+rebot --merge original.xml rerun.xml                       # finally merge results
+```
+<img width="922" alt="image" src="https://github.com/Zahid-Automate/RobotFramework/assets/45691238/9093a675-1f63-4513-b65a-26eb668f9e9e">
+
+</br>[Re-run Failed Tests.html](https://rawcdn.githack.com/Zahid-Automate/RobotFramework/0713dc35875b2d96c6dafdec4a0f92fc7552240e/report.html)
+
 <h1>Generated results</h1>
 After running tests, you will get report and log in HTML format. Example files are also visible online in case you are not interested in running the demo yourself. Notice that one of the test has failed on purpose to show how failures look like.
 
